@@ -1,0 +1,29 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Likes
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  	<% @crypto.each do |x|%>
+    <a class="dropdown-item"> <%= x %> </a><br> 
+      <%end%>
+  </div>
+</div>
+<div class="content">
+<%= form_for @home do |f| %>
+  <div class="form-group">
+    <label for="title">Name of crypto</label>
+    <%= f.text_field :name, class: 'form-control'%>
+  </div>
+  <button type="submit" class="btn btn-warning" name="create">Crypto value</button>
+</div>
+<% end %>
+</div>
+
+
+
+
+	i = 0
+	while (i < @crypto.keys.length)
+		Coin.create(name: @crypto.keys[i], value: @crypto.values[i])
+		i += 1
+	end

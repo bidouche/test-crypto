@@ -1,0 +1,14 @@
+
+
+<div class="content">
+<%= form_for @coin, url: {action: "index"} do |f| %>
+  <div class="form-group">
+    <label for="title">Name of crypto</label>
+    <%= f.text_field :name, class: 'form-control col-md-1'%>
+  </div>
+  <button type="submit" class="btn btn-warning" name="create">Crypto value</button>
+</div>
+<% end %>
+</div>
+
+
